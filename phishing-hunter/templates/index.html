@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title>Fake Login Page Detector</title>
+</head>
+<body>
+    <h1>Upload Suspected Screenshot</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="screenshot" required>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if result %}
+        <h2>Results:</h2>
+        <p><strong>Image Prediction:</strong> {{ result.image_result.label }} (Confidence: {{ result.image_result.confidence }})</p>
+        <p><strong>OCR Suspicion Score:</strong> {{ result.ocr_score }}</p>
+        <ul>
+        {% for finding in result.ocr_findings %}
+            <li>{{ finding }}</li>
+        {% endfor %}
+        </ul>
+        <p><strong>Domain Check:</strong> {{ result.domain_similarity }}</p>
+    {% endif %}
+</body>
+</html>
