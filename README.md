@@ -122,6 +122,8 @@ The CNN model is simulated — you can integrate a trained model easily in model
 - Deploy on cloud (Render, Heroku, etc.)
 
 ---
+Youtube link
+https://youtu.be/QJ6JkNgyuYY
 
 ## 📜 License
 
